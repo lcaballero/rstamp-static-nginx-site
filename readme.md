@@ -1,12 +1,22 @@
-[![Build Status](https://travis-ci.org/lcaballero/gen-static.svg?branch=master)](https://travis-ci.org/) [![NPM version](https://badge.fury.io/js/gen-static.svg)](http://badge.fury.io/js/gen-static)
+[![Build Status](https://travis-ci.org/lcaballero/rstamp-static-nginx-site.svg?branch=master)](https://travis-ci.org/) [![NPM version](https://badge.fury.io/js/rstamp-static-nginx-site.svg)](http://badge.fury.io/js/rstamp-static-nginx-site)
 
 # Introduction
 
-## Overview
+Simply put this create a directory called site/ and in that directory it
+generates a new nginx.conf file and a few stubbed files.  With this
+directory and nginx one can stand up a static http server.
 
 ## Installation
 
+```
+%> npm install -g rstamp-static-nginx-site
+```
+
 ## Usage
+
+```
+%> rstamp --generate static-nginx-site
+```
 
 ## License
 
