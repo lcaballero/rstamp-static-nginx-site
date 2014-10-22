@@ -1,0 +1,31 @@
+{
+  "name": "rstamp-static-nginx-site",
+  "version": "0.0.1",
+  "description": "A static file generator.",
+  "main": "index.js",
+  "keywords": [
+    "site",
+    "generator"
+  ],
+  "license": "Eclipse Public License (EPL)",
+  "repository": "http://github.com/lcaballero/gen-static.git",
+  "scripts": {
+    "test": "mocha --reporter list --compilers coffee:coffee-script/register tests"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "coffee-script": "^1.8.0",
+    "commander": "^2.4.0",
+    "inquirer": "^0.8.0",
+    "lodash": "^2.4.1",
+    "moment": "^2.8.3",
+    "nject": "^1.2.2",
+    "rubber-stamp": "0.0.5"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "mocha": "^1.21.5",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.6.0"
+  }
+}
