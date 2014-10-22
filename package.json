@@ -8,7 +8,7 @@
     "generator"
   ],
   "license": "Eclipse Public License (EPL)",
-  "repository": "http://github.com/lcaballero/gen-static.git",
+  "repository": "http://github.com/lcaballero/rstamp-static-nginx-site.git",
   "scripts": {
     "test": "mocha --reporter list --compilers coffee:coffee-script/register tests"
   },
