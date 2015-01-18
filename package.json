@@ -2,7 +2,6 @@
   "name": "rstamp-static-nginx-site",
   "version": "0.0.1",
   "description": "A static file generator.",
-  "main": "index.js",
   "keywords": [
     "site",
     "generator"
@@ -20,7 +19,7 @@
     "lodash": "^2.4.1",
     "moment": "^2.8.3",
     "nject": "^1.2.2",
-    "rubber-stamp": "0.0.5"
+    "rubber-stamp": "0.0.6"
   },
   "devDependencies": {
     "chai": "^1.9.2",

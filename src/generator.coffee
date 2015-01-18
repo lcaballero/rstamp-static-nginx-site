@@ -17,6 +17,19 @@ module.exports = (opts, isTesting) ->
     )
     .copy('app/html/index.html')
     .translate('nginx.conf.ftl', 'nginx.conf')
+    .translate('open.ftl.sh', 'open.sh')
+    .translate('start.sh', 'start.sh')
+    .run(
+      commands:
+        if isTesting then []
+        else [
+          name: 'chmod'
+          args: ['+x', './open.sh', './start.sh']
+        ,
+          name: 'git'
+          args: ['init']
+        ]
+    )
 
   ->
     nogen = path.resolve(opts.target, ".rstamp.nogen")
