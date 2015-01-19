@@ -4,7 +4,7 @@ fs      = require('fs')
 { run } = require('./ProcessHelpers')
 
 
-describe 'GenStatic =>', ->
+describe 'generator-tests =>', ->
 
   exists = (root, dirs...) ->
     for dir in dirs
@@ -15,6 +15,12 @@ describe 'GenStatic =>', ->
     cmds =
       target : cwd
       commands: [ { name: 'rm', args: ['-rf', t] } ]
+    run(cmds, cb)
+
+  mkdir = (cwd, t, cb) ->
+    cmds =
+      target    : cwd
+      commands  : [ { name: 'mkdir', args: [ t ] } ]
     run(cmds, cb)
 
   describe "generate =>", ->
@@ -29,19 +35,21 @@ describe 'GenStatic =>', ->
       app_dir : app_dir
       port    : port
 
+    beforeEach (done) ->
+      mkdir(process.cwd(), 'files/targets/t1', done)
+
     beforeEach ->
       inputs  = createInputs()
       cmd     = _.defaults({}, { source: source, target: target }, inputs)
       Gen(cmd, true)()
 
     afterEach (done) ->
-#      rm target, 'site', done
-      done()
+      rm process.cwd(), 'files/targets/t1', done
 
     it 'should have created the site/', ->
       exists(target,
         'app',
-        'logs',
+        'logs'  ,
         'nginx.conf',
         'app/html',
         'app/images')

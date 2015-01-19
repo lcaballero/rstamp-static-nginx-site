@@ -1,4 +1,3 @@
-GenStatic = require('./GenStatic')
 qu        = require('inquirer')
 Gen       = require('./generator')
 _         = require('lodash')

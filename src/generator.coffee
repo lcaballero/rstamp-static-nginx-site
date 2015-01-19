@@ -57,7 +57,7 @@ module.exports = (opts, isTesting) ->
   writePackageJson = (opts) ->
     json = createPackgeJson(opts)
     fs.writeFileSync(
-      path.resolve(opts.app_dir, 'package.json'),
+      path.resolve(target, 'package.json'),
       JSON.stringify(json, null, '  '))
 
   ->
