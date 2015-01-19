@@ -20,7 +20,7 @@ describe 'generator-tests =>', ->
   mkdir = (cwd, t, cb) ->
     cmds =
       target    : cwd
-      commands  : [ { name: 'mkdir', args: [ t ] } ]
+      commands  : [ { name: 'mkdir', args: [ '-p', t ] } ]
     run(cmds, cb)
 
   describe "generate =>", ->
@@ -36,7 +36,8 @@ describe 'generator-tests =>', ->
       port    : port
 
     beforeEach (done) ->
-      mkdir(process.cwd(), 'files/targets/t1', done)
+      if !fs.existsSync(path.resolve(process.cwd(), target))
+        mkdir(process.cwd(), target, done)
 
     beforeEach ->
       inputs  = createInputs()
